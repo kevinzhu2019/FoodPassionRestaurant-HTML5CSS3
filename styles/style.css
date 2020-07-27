@@ -1,0 +1,876 @@
+html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+
+*, *:before, *:after {box-sizing: inherit}
+
+.visuallyhidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
+
+@font-face {
+    font-family: 'Open Sans', sans-serif;
+    src: url("../fonts/openSans/OpenSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Great Vibes', cursive;
+    src: url("../fonts/greatVibes/GreatVibes-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Playfair Display', serif;
+    src: url("../fonts/playFair/PlayfairDisplay-Regular.ttf");
+}
+
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes&display=swap');
+
+html {
+    font-size: 62.5%;
+}
+
+header {
+    background-image: url("../assets/image-1.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+header nav.mostleft {
+    height: 100%;
+    width: 10%;
+    margin-left: 0;
+    background: rgba(35,41,44,0.7); /*this RGB code refer to hex "#23292c"*/
+}
+
+.first {
+    width: 100%;
+}
+
+.first .gourmet {
+    width: 70%;
+    margin: auto;
+}
+
+.first .gourmet img {
+    width: 100%;
+    padding-top: 30px;
+}
+
+.first ol {
+    position: relative;/*为了下面的"伪类"必须设置relative*/
+    width: 70%;
+    /* border: 1px solid slategray; */
+}
+
+.first ol:before { /*伪类,专门定义各类非标准线条/边框*/
+    content: '';
+    position: absolute;
+    left: 20%;
+    top: 0;
+    bottom: 10%;
+    right: 20%;
+    height: 1px;
+    width: auto;
+    background: slategray;
+}
+
+.first ol li {
+    display: block;
+    margin: 30px 5px;
+}
+
+.first ol li:first-child { /*这个padding只是为了离伪类的横线远一些*/
+    padding-top: 30px;
+}
+
+.first ol li:hover a {
+    color: white;
+}
+
+.first ol li a {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8rem;
+    color: lightslategrey; /*the hyper text color is not defined in the request file*/
+    list-style-type: none;
+    text-decoration: none; /*去掉下划线*/
+}
+
+.middle {
+    width: 100%;
+}
+
+.middle .twitter {
+    position: relative;
+    margin: 30px auto;
+    width: 100%;
+    /* border: 1px solid slategray; */
+    /* background: yellow; */
+}
+
+.middle .twitter:before { /*伪类,专门定义各类非标准线条/边框*/
+    content: '';
+    position: absolute;
+    left: 20%;
+    top: 0;
+    bottom: 10%;
+    right: 20%;
+    height: 1px;
+    width: auto;
+    background: slategray;
+}
+
+.twitter img {
+    width: 20px;
+    margin: 0 calc(50% - 10px); /*使图标居中,dont know why "0 auto" does not work...*/
+    margin-top: 40px; /*make the distance between 伪类 and twitter icon*/
+}
+
+.middle ul {
+    width: 80%;
+    /* border: 1px solid yellow; */
+}
+
+.middle ul li:hover a {
+    color: white;
+}
+
+.together li, .rests li {
+    display: inline-block;
+    list-style-type: none;
+    list-style-position: inside;
+}
+
+.middle a {
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8rem;
+}
+
+.together {
+    padding-left: 15px;
+}
+
+.rests {
+    padding-left: 15px;
+    /* border: 1px solid red; */
+}
+
+.rests li {
+    margin: 5px auto;
+    /* border: 1px solid yellow; */
+}
+
+.rests li:first-child {
+    margin-left: 15px;
+}
+
+.rests li:last-child {
+    margin-left: 10px;
+}
+
+.rests li a {
+    color: lightslategray;
+    padding: 0 auto;
+}
+
+.together .email {
+    color: #e1560e;
+}
+
+.together .checkout {
+    color: lightslategrey;
+}
+
+.last {
+    position: relative;
+}
+
+.last:before { /*伪类,专门定义各类非标准线条/边框*/
+    content: '';
+    position: absolute;
+    left: 20%;
+    top: 0;
+    bottom: 10%;
+    right: 20%;
+    height: 1px;
+    width: auto;
+    background: slategray;
+}
+
+.threeicons {
+    /* border: 1px solid yellow; */
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.last .threeicons img {
+    width: 10px;
+    margin: 1px 5px;
+}
+
+.navdisclaimer {
+    /* border: 1px solid yellow; */
+    margin-bottom: 0;
+}
+
+.navdisclaimer p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8rem;
+    margin: 5px auto;
+    color: lightslategray;
+    padding-left: 25px;
+}
+
+header .wrapper1 {
+    /* border: 1px solid yellow; */
+    width: 70%;
+    float: left;
+}
+
+.wrapper1 img {
+    margin-left: 200px;
+}
+
+.wrapper1 .mainbutton li {
+    list-style-type: none;
+    border: 1px solid #e1560e;
+    border-radius: 5px;
+    background: #e1560e;
+    padding: 20px 60px;
+    width: 10%;
+    margin-left: 420px;
+}
+
+.wrapper1 a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    text-align: center;   
+}
+
+/*here starts the class"chef"*/
+
+.chef {
+    display: flex;
+    flex-direction: row;
+}
+
+.aboutchefs {
+    width: 50%;
+    background: rgb(216 201 224);
+    /* border: 1px solid yellow; */
+}
+
+.aboutchefs .wholeleft {
+    width: 60%;
+    /* margin-left: auto;
+    margin-right: 10px; */
+    margin: 60px 10px auto auto;
+    /* border: 1px solid red; */
+}
+
+.aboutchefs .wholeleft .title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+}
+
+.photochef {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.chefnametitle {
+    margin-left: 20px;
+    font-family: 'Open Sans', sans-serif;
+    /* border: 1px solid red; */
+}
+
+.chefnametitle h3 {
+    font-size: 0.8rem;
+    color: #e1560e;
+}
+
+.chefdescription1, .chefdescription2 {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+}
+
+.chefdescription1 {
+    font-style: italic;
+}
+
+.chefdescription2 {
+    color: lightslategray;
+    font-size: 0.8rem;
+}
+
+/* .backforwardbuttons {
+    border: 1px solid red;
+} */
+
+.backforwardbuttons p a {
+    text-decoration: none;
+    color: lightslategray;
+    font-size: 4rem;
+    /* border: 1px solid green; */
+    letter-spacing: 20px;
+}
+
+.backforwardbuttons a:hover {
+    color: #e1560e;
+}
+
+.photochef .photo {
+    width: 70px;
+    border-radius: 50%;
+}
+
+.chefbigpicture {
+    width: 50%;
+    flex-grow: 1;
+}
+.chefbigpicture img {
+    width: 100%;
+    height: 100%;
+}
+
+.ourGallery {
+    width: 100%;
+    background: rgb(95, 92, 92);
+    padding-top: 30px;
+    padding-bottom: 40px; 
+    /* border: 1px solid red; */
+}
+
+.ourGallery .galleryTitle {
+    width: 20%;
+    margin: 0 auto;
+    /* margin-top: 40px; */ /*加了margin-top会把整个parent container往下推造成top空白*/
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    /* border: 1px solid yellow; */
+}
+
+.ourGallery .description {
+    width: 50%;
+    margin: 0 auto;
+    padding: 30px auto;
+    padding-bottom: 40px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: white;
+    /* border: 1px solid yellow; */
+    font-style: italic;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.ourGallery .classification {
+    width: 35%;
+    margin: 0 auto;
+    /* padding: 10px 20px; */
+    border: 1px solid grey;
+    border-radius: 2px;
+    /* background: grey; */
+}
+
+.ourGallery .classification ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 1px solid yellow; */
+}
+
+.ourGallery .classification ul li {
+    display: inline-block;
+    list-style-type: None;
+    padding: 5px 10px;
+    /* border: 1px solid yellow; */
+    /*position: relative; 准备为"li"设置伪元素*/
+}
+
+.ourGallery .classification ul li:hover a {
+    color: #e1560e;
+}
+
+.ourGallery .classification ul li:nth-child(2) {
+    border-left: 1px solid grey;
+}
+
+.ourGallery .classification ul li:nth-child(3) {
+    border-left: 1px solid grey;
+}
+
+.ourGallery .classification ul li:nth-child(4) {
+    border-left: 1px solid grey;
+}
+
+.ourGallery .classification ul li:nth-child(5) {
+    border-left: 1px solid grey;
+}
+
+/* .ourGallery .classification .menu .all {
+    padding: 10px;
+} */
+
+/* .ourGallery .classification .menu .all:after {
+    content: '';
+    position: absolute;
+    left: auto;
+    top: 5px;
+    bottom: 5px;
+    right: auto;
+    height: 90%;
+    width: 1px;
+    background-color: grey;
+}
+
+.ourGallery .classification .menu .meat:after {
+    content: '';
+    position: absolute;
+    left: auto;
+    top: 5px;
+    bottom: 5px;
+    right: auto;
+    height: 90%;
+    width: 1px;
+    background-color: grey;
+}
+
+.ourGallery .classification .menu .fish:after {
+    content: '';
+    position: absolute;
+    left: auto;
+    top: 5px;
+    bottom: 5px;
+    right: auto;
+    height: 90%;
+    width: 1px;
+    background-color: grey;
+}
+
+.ourGallery .classification .menu .dessert:after {
+    content: '';
+    position: absolute;
+    left: auto;
+    top: 5px;
+    bottom: 5px;
+    right: auto;
+    height: 90%;
+    width: 1px;
+    background-color: grey;
+} */
+
+.ourGallery .classification li a {
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+}
+
+/*here starts the style for .samples*/
+.samples {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* .samples .chaofan, .samples .icecream, .samples .frenchfries, .samples .jiaozi, .samples .salad, .samples .hamberger, .samples .grape, .samples .sandwitch, .samples .waffle, .samples .pancake {
+    width: 20%;
+} */
+
+.samples .food {
+    width: 20%;
+    height: 25vh;
+    background-position: center;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid yellow; */
+}
+
+.samples .chaofan {
+    background-image: url("../assets/image-3.jpeg");    
+}
+
+.samples .icecream {
+    background-image: url("../assets/image-4.jpeg");    
+}
+
+.samples .frenchfries {
+    background-image: url("../assets/image-5.jpeg");    
+}
+
+.samples .jiaozi {
+    background-image: url("../assets/image-6.jpeg");    
+}
+
+.samples .salad {
+    background-image: url("../assets/image-7.jpeg");    
+}
+
+.samples .hamberger {
+    background-image: url("../assets/image-8.jpeg");    
+}
+
+.samples .grape {
+    background-image: url("../assets/image-9.jpeg");    
+}
+
+.samples .sandwitch {
+    background-image: url("../assets/image-10.jpeg");    
+}
+
+.samples .waffle {
+    background-image: url("../assets/image-11.jpeg");    
+}
+
+.samples .pancake {
+    background-image: url("../assets/image-12.jpeg");    
+}
+
+.samples .food .display {
+    width: 50%;
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    margin: auto auto;
+}
+
+.samples .food .icons a {
+    width: 50%;
+    background: white;
+    margin: 1px;
+    padding: 1px;
+    display: inline-block;
+}
+
+.samples .food .display, .samples .food .icons {
+    display: none;
+}
+
+.samples .food:hover .display {
+    display: block;
+}
+
+.samples .food:hover .icons {
+    position: absolute;
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/*here ends the style for "samples" div*/
+
+/* Here starts the style for "OurService" div*/
+main .services .upper .serviceTitle {
+    width: 20%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+}
+
+main .services .upper .serviceDescription {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.2rem;
+    font-style: italic;
+    font-family: 'Open Sans', sans-serif;
+    color: grey;
+}
+
+main .services .fourMenus {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+main .services .fourMenus .menu {
+    width: 25%;
+    /* border: 1px solid yellow; */
+}
+
+main .services .fourMenus .menu .pic {
+    width: 65%;
+    margin: 30px auto;
+    /* border: 1px solid red; */
+}
+
+main .services .fourMenus .menu .title {
+    width: 40%;
+    text-align: center;
+    margin: 20px auto;
+    color: #e1560e;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.3rem;
+}
+
+main .services .fourMenus .menu .description {
+    width: 80%;
+    text-align: center;
+    margin-bottom: 60px;
+    font-family: 'Open Sans', sans-serif;
+    color: grey;
+}
+
+/*here starts the style for div ".ourBreakfast"*/
+.ourBreakfast {
+    /* padding: 20px 0;
+    background-image: url("../assets/image-13.jpeg");
+    background-position: center;
+    background-size: cover;
+    filter: brightness(70%);
+    width: 100%;
+    height: 90vh; */
+    position: relative;
+}
+
+.ourBreakfast img {
+    width: 100%;
+    display: block;
+}
+
+.ourBreakfast .bigBreakfast {
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background: rgba(255, 255, 255, 0.6);
+    opacity: 1;
+}
+
+.ourBreakfast .titleButton {
+    width: 65%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.ourBreakfast .titleButton .title {
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 2rem;
+}
+
+.ourBreakfast .titleButton .leftRight ul li {
+    display: inline-block;
+    list-style-type: none;
+    padding: 0 20px;
+}
+
+.ourBreakfast .titleButton .leftRight ul li a {
+    text-decoration: none;
+    font-size: 4rem;
+    font-weight: 800;
+    color: grey;
+}
+
+.ourBreakfast .titleButton .leftRight ul li:hover a {
+    color: #e1560e;
+}
+
+.ourBreakfast .breakfastMenu {
+    width: 70%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    margin: 0 auto;
+}
+
+.ourBreakfast .breakfastMenu .menu {
+    margin: 5px;
+    width: calc(50% - 20px);
+    color: white;
+}
+
+.ourBreakfast .breakfastMenu .menu .menuTitle {
+    font-family: 'Playfair Display', serif;
+}
+
+.ourBreakfast .breakfastMenu .menu .description {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.ourBreakfast .viewDetails {
+    padding: 20px 30px;
+    margin: 20px auto;
+    color: white;
+    width: 10%;
+    border: 1px solid #e1560e;
+    background: #e1560e;
+    border-radius: 5px;
+    text-align: center;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+}
+
+.ourBreakfast .viewDetails a {
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    color: white;
+    font-weight: 700;
+}
+
+/*here starts the style for div "map"*/
+main .map {
+    background-image: url("../assets/Icons/map.png");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 45px;
+}
+
+/*here starts the style for footer*/
+footer {
+    background: #23292c;
+    width: 100%;
+    height: 50vh;
+    position: relative;
+}
+
+footer .wholeFooter {
+    width: 70%;
+    margin: 0 auto;
+    /* padding-top: 80px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .leftColumn ul {
+    padding: 0;
+}
+
+footer .leftColumn {
+    width: calc(100%/3 - 20px);
+    margin: auto 10px;
+    /* border: 1px solid yellow; */
+}
+
+footer .leftColumn .logo2 {
+    width: 55%;
+    margin: 0 auto;
+    /* border: 1px solid yellow; */
+}
+
+footer .leftColumn ul li {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0 10px;
+}
+
+footer .leftColumn ul li a img {
+    width: 20px;
+}
+
+footer .middleColumn {
+    width: calc(100%/3 - 20px);
+    margin: auto 10px;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    padding-top: 280px;
+    /* border: 1px solid yellow; */
+}
+
+footer .middleColumn p {
+    text-align: center;
+}
+
+footer .rightColumn {
+    width: calc(100%/3 - 20px);
+    margin: auto 10px;
+    /* border: 1px solid yellow; */
+}
+
+footer .rightColumn .items {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+}
+
+footer .rightColumn .items .icon {
+    margin: 0 15px;
+}
+
+footer .rightColumn .items .mailIcon {
+    margin: 0 12px;
+}
+
+/*here starts the "ContactUS" dev style*/
+footer .contactUs {
+    width: calc(100%/3 - 130px);
+    background: white;
+    position: absolute;
+    bottom: 100px;
+    left: 490px;
+    right: auto;
+    top: auto;
+}
+
+footer .contactUs .title {
+    width: 70%;
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    margin: 0 auto;
+    padding: 10px 0;
+    /* border: 1px solid yellow; */
+}
+
+input[type=text], input[type=email], textarea[id=feedback] {
+    width: 80%;
+    margin: 5px auto;
+    padding: 5px 20px 5px 5px;
+    display: block;
+}
+
+input[type=text] {
+    background-image: url("")
+}
+
+button {
+    width: 35%;
+    display: block;
+    margin: 30px auto;
+    padding: 5px 25px;
+    border: 1px solid black;
+}
